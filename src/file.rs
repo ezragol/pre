@@ -26,10 +26,6 @@ pub fn split_by_section(lines: Vec<String>) -> Vec<Node> {
     for (i, line) in lines.iter().enumerate() {
         let trim = line.trim();
         if i >= next_skip && !line.is_empty() {
-            if trim.starts_with('[') {
-                node.raw.push_str(trim);
-                continue;
-            }
             let indent = indent_level(line);
             if indent < start_indent {
                 break;
