@@ -1,15 +1,18 @@
-doctype html
+doctype xml
 
 html [lang en]
     head
-        meta [charset UTF-8]
-        meta [name viewport] [content width=device-width, initial-scale=1.0]
-    body.container
-        header
-        div
-        div#root
-            span
-            span
-        footer
-            div
+        meta! [charset UTF-8]
+        meta:viewport! [content width=device-width, initial-scale=1.0]
+        link [rel stylesheet] 
+             [href styles.css]
+
+    body.container#main:name
+        header.top.container
+        div hello!
+            div#root
                 span
+                span
+            footer
+                div
+                    span
