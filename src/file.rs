@@ -3,8 +3,6 @@ use std::{
     io::{BufRead, BufReader, Result},
 };
 
-use lazy_static::__Deref;
-
 use crate::node::Node;
 
 pub fn lines(path: &str) -> Result<Vec<String>> {
@@ -24,7 +22,6 @@ pub fn split_by_section(lines: Vec<String>) -> Vec<Node> {
     let mut next_skip = 0;
 
     for (i, line) in lines.iter().enumerate() {
-        let trim = line.trim();
         if i >= next_skip && !line.is_empty() {
             let indent = indent_level(line);
             if indent < start_indent {
